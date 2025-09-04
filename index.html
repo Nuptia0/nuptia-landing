@@ -1,1 +1,139 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>Nuptia</title></head><body><h1>Nuptia</h1></body></html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nuptia - Landing Page</title>
+  <style>
+    :root{
+      --brown:#5a4033;
+      --cream:#fdfaf7;
+      --text:#3a2e2e;
+      --accent:#57710d;
+      --white:#ffffff;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Georgia, "Times New Roman", serif;
+      color:var(--text);
+      background-color:var(--cream);
+    }
+    .hero{
+      background:url("https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e") no-repeat center/cover;
+      min-height:90vh;
+      display:flex;align-items:center;justify-content:center;
+      text-align:center;color:var(--white);padding:0 20px;
+    }
+    .hero h1{font-size:2.6rem;margin:0 0 14px}
+    .hero p{font-size:1.125rem;margin:0 0 24px;max-width:720px}
+    .btn{
+      padding:12px 20px;margin:8px;border:none;border-radius:8px;
+      font-size:1rem;cursor:pointer;
+    }
+    .btn-primary{background:var(--white);color:var(--brown)}
+    .btn-secondary{background:var(--brown);color:var(--white)}
+    section{padding:56px 20px;max-width:1040px;margin:auto}
+    h2{text-align:center;margin:0 0 36px;font-size:2rem}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+    @media (max-width: 820px){.grid{grid-template-columns:1fr}}
+    ul{list-style:none;padding:0;margin:0}
+    ul li{margin:10px 0}
+    ul li::before{content:"✔ ";color:var(--accent)}
+    .steps{display:flex;gap:18px;justify-content:space-between;flex-wrap:wrap;text-align:center}
+    .step{flex:1 1 200px;background:#fff;padding:16px;border-radius:10px}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:24px}
+    @media (max-width:820px){.form-grid{grid-template-columns:1fr}}
+    form{background:#fff;padding:20px;border-radius:12px}
+    label{display:block;margin:8px 0 6px}
+    input,select{width:100%;padding:10px;border-radius:8px;border:1px solid #ccc}
+    form button{width:100%;padding:12px;background:var(--brown);color:#fff;border:none;border-radius:8px}
+    small{display:block;text-align:center;opacity:.7;margin-top:8px}
+    a{color:var(--brown)}
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <h1>Un mariage mémorable, au prix qui vous ressemble</h1>
+      <p>Nuptia, la plateforme qui connecte les couples à budget maîtrisé avec des prestataires talentueux et vérifiés.</p>
+      <button class="btn btn-primary">Je prépare mon mariage</button>
+      <button class="btn btn-secondary">Je suis prestataire</button>
+    </div>
+  </header>
+  <section>
+    <h2>Pourquoi Nuptia ?</h2>
+    <div class="grid">
+      <div>
+        <h3>Pour les futurs mariés</h3>
+        <ul>
+          <li>Des prestataires abordables et vérifiés</li>
+          <li>Une organisation simplifiée (checklist + budget + devis)</li>
+          <li>Un tableau de bord unique pour tout centraliser</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Pour les prestataires débutants</h3>
+        <ul>
+          <li>Une visibilité immédiate auprès de couples sérieux</li>
+          <li>Des devis et paiements sécurisés sans perte de temps</li>
+          <li>Un outil pro simple pour gérer ses missions et revenus</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section>
+    <h2>Comment ça marche ?</h2>
+    <div class="steps">
+      <div class="step">Inscrivez-vous gratuitement</div>
+      <div class="step">Trouvez ou proposez vos services</div>
+      <div class="step">Échangez et réservez facilement</div>
+      <div class="step">Payez & facturez en toute sécurité</div>
+    </div>
+  </section>
+  <section>
+    <h2>Rejoignez le mouvement Nuptia</h2>
+    <p style="text-align:center">Soyez parmi les premiers à découvrir la plateforme — l’inscription est gratuite !</p>
+    <div class="form-grid">
+      <form action="https://formspree.io/f/mnnbobny" method="POST">
+        <h3>Je suis un futur marié</h3>
+        <label>Prénom <input type="text" name="prenom" required></label>
+        <label>Email <input type="email" name="email" required></label>
+        <label>Ville <input type="text" name="ville" required></label>
+        <label>Date du mariage (optionnel) <input type="date" name="date_mariage"></label>
+        <label><input type="checkbox" name="consentement" required> J’accepte d’être contacté·e et la <a href="/politique-confidentialite.html">Politique de Confidentialité</a></label>
+        <input type="hidden" name="_redirect" value="/merci.html">
+        <button>S'inscrire</button>
+      </form>
+      <form action="https://formspree.io/f/mnnbobny" method="POST">
+        <h3>Je suis prestataire</h3>
+        <label>Prénom <input type="text" name="prenom" required></label>
+        <label>Email <input type="email" name="email" required></label>
+        <label>Ville <input type="text" name="ville" required></label>
+        <label>Téléphone <input type="tel" name="telephone"></label>
+        <label>Type de service
+          <select name="service" required>
+            <option value="">Sélectionnez</option>
+            <option>Photographe/Vidéaste</option>
+            <option>Traiteur</option>
+            <option>DJ</option>
+            <option>Fleuriste</option>
+            <option>Animateur / maître de cérémonie</option>
+            <option>Photobooth</option>
+            <option>Décorateur</option>
+            <option>Makeup artist</option>
+            <option>Coiffeur</option>
+            <option>Baby-sitter / animateur enfants</option>
+            <option>Esthéticienne</option>
+            <option>Groupe de musique</option>
+            <option>Salle de réception</option>
+          </select>
+        </label>
+        <label><input type="checkbox" name="consentement" required> J’accepte d’être contacté·e et la <a href="/politique-confidentialite.html">Politique de Confidentialité</a></label>
+        <input type="hidden" name="_redirect" value="/merci.html">
+        <button>S'inscrire</button>
+      </form>
+    </div>
+  </section>
+</body>
+</html>
